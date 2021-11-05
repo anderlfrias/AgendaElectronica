@@ -17,7 +17,7 @@ namespace CapaDatos
     {
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["default"].ConnectionString);
         
-        public IList<Contacto> MostrarContactos(string filtrar)
+        public IList<Contacto> Mostar(string filtrar)
         {
             SqlDataReader LeerFilas;
             SqlCommand command = new SqlCommand("SP_BUSCAR", sqlConnection);
@@ -50,6 +50,60 @@ namespace CapaDatos
             sqlConnection.Close();
             LeerFilas.Close();
             return contactos;
+        }
+
+        public void Insertar(Contacto model)
+        {
+            SqlCommand command = new SqlCommand("SP_INSERTAR", sqlConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            sqlConnection.Open();
+
+            command.Parameters.AddWithValue("Id", model.Id;
+            command.Parameters.AddWithValue("@Nombre", model.Nombre);
+            command.Parameters.AddWithValue("@Apellido", model.Apellido);
+            command.Parameters.AddWithValue("@FechaNacimiento", model.FechaNacimiento);
+            command.Parameters.AddWithValue("@Direccion", model.Direccion);
+            command.Parameters.AddWithValue("@Genero", model.Genero);
+            command.Parameters.AddWithValue("@EstadoCivil", model.EstadoCivil);
+            command.Parameters.AddWithValue("@Movil", model.Movil);
+            command.Parameters.AddWithValue("@Telefono", model.Telefono);
+            command.Parameters.AddWithValue("@CorreoElectronico", model.Email);
+
+            command.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void Modificar(Contacto model)
+        {
+            SqlCommand command = new SqlCommand("SP_MODIFICAR", sqlConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            sqlConnection.Open();
+
+            command.Parameters.AddWithValue("Id", model.Id);
+            command.Parameters.AddWithValue("@Nombre", model.Nombre);
+            command.Parameters.AddWithValue("@Apellido", model.Apellido);
+            command.Parameters.AddWithValue("@FechaNacimiento", model.FechaNacimiento);
+            command.Parameters.AddWithValue("@Direccion", model.Direccion);
+            command.Parameters.AddWithValue("@Genero", model.Genero);
+            command.Parameters.AddWithValue("@EstadoCivil", model.EstadoCivil);
+            command.Parameters.AddWithValue("@Movil", model.Movil);
+            command.Parameters.AddWithValue("@Telefono", model.Telefono);
+            command.Parameters.AddWithValue("@CorreoElectronico", model.Email);
+
+            command.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        public void Eliminar(Contacto model)
+        {
+            SqlCommand command = new SqlCommand("SP_ELIMINAR", sqlConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            sqlConnection.Open();
+
+            command.Parameters.AddWithValue("@Id", model.Id);
+
+            command.ExecuteNonQuery();
+            sqlConnection.Close();
         }
     }
 }
