@@ -17,7 +17,7 @@ namespace CapaDatos
     {
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["default"].ConnectionString);
         
-        public IList<Contacto> Mostar(string filtrar)
+        public IList<Contacto> Find(string filtrar)
         {
             SqlDataReader LeerFilas;
             SqlCommand command = new SqlCommand("SP_BUSCAR", sqlConnection);
@@ -52,13 +52,13 @@ namespace CapaDatos
             return contactos;
         }
 
-        public void Insertar(Contacto model)
+        public void Add(Contacto model)
         {
             SqlCommand command = new SqlCommand("SP_INSERTAR", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
             sqlConnection.Open();
 
-            command.Parameters.AddWithValue("Id", model.Id;
+            command.Parameters.AddWithValue("Id", model.Id);
             command.Parameters.AddWithValue("@Nombre", model.Nombre);
             command.Parameters.AddWithValue("@Apellido", model.Apellido);
             command.Parameters.AddWithValue("@FechaNacimiento", model.FechaNacimiento);
@@ -73,7 +73,7 @@ namespace CapaDatos
             sqlConnection.Close();
         }
 
-        public void Modificar(Contacto model)
+        public void Update(Contacto model)
         {
             SqlCommand command = new SqlCommand("SP_MODIFICAR", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
@@ -94,13 +94,13 @@ namespace CapaDatos
             sqlConnection.Close();
         }
 
-        public void Eliminar(Contacto model)
+        public void Remove(string id)
         {
             SqlCommand command = new SqlCommand("SP_ELIMINAR", sqlConnection);
             command.CommandType = CommandType.StoredProcedure;
             sqlConnection.Open();
 
-            command.Parameters.AddWithValue("@Id", model.Id);
+            command.Parameters.AddWithValue("@Id", id);
 
             command.ExecuteNonQuery();
             sqlConnection.Close();
