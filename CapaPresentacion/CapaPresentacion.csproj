@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmContactod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContactod.Designer.cs">
+      <DependentUpon>FrmContactod.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmContactod.resx">
+      <DependentUpon>FrmContactod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,9 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\agenda.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-cerrar-ventana-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
