@@ -20,10 +20,25 @@ namespace CapaNegocios
             _dbContactos = new ContactoDatos();
         }
 
-        public IList<Contacto> Get(string filtro = "")
+        public Contacto Get(string filtro = "")
         {
             var result = _dbContactos.Find(filtro);
+
             return result;
+        }
+
+        public ModelViewContactos GetViewModel(string filtro = "")
+        {
+            var result = _dbContactos.Find(filtro);
+
+            ModelViewContactos viewContactos = new ModelViewContactos();
+            viewContactos.Codigo = result.Codigo;
+            viewContactos.Nombres = $"{result.Nombre} {result.Apellido}";
+            viewContactos.Movil = result.Movil;
+            viewContactos.Telefono = result.Telefono;
+            viewContactos.Email = result.Email;
+
+            return viewContactos;
         }
 
         public string Create(Contacto model)

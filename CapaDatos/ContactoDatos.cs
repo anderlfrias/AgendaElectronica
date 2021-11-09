@@ -17,7 +17,7 @@ namespace CapaDatos
     {
         SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["default"].ConnectionString);
         
-        public IList<Contacto> Find(string filtrar)
+        public Contacto Find(string filtrar)
         {
             SqlDataReader LeerFilas;
             SqlCommand command = new SqlCommand("SP_BUSCAR", sqlConnection);
@@ -49,7 +49,7 @@ namespace CapaDatos
 
             sqlConnection.Close();
             LeerFilas.Close();
-            return contactos;
+            return (Contacto)contactos;
         }
 
         public void Add(Contacto model)

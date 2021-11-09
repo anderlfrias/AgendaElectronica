@@ -22,8 +22,6 @@ namespace CapaPresentacion
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            var result = _negocio.Get();
-            dataGridView1.DataSource = result;
         }
     }
 }
