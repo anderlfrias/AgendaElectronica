@@ -32,6 +32,7 @@ namespace CapaNegocios
             var result = _dbContactos.Find(filtro);
 
             ModelViewContactos viewContactos = new ModelViewContactos();
+            viewContactos.Id = result.Id;
             viewContactos.Codigo = result.Codigo;
             viewContactos.Nombres = $"{result.Nombre} {result.Apellido}";
             viewContactos.Movil = result.Movil;

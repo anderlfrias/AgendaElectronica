@@ -8,12 +8,14 @@ namespace CapaEntidades
 {
     public class ModelViewContactos
     {
+        private string _id;
         private string _codigo;
         private string _nombres;
         private string _movil;
         private string _telefono;
         private string _email;
 
+        public string Id { get => _id; set => _id = value; }
         public string Codigo { get => _codigo; set => _codigo = value; }
         public string Nombres { get => _nombres; set => _nombres = value; }
         public string Movil { get => _movil; set => _movil = value; }
