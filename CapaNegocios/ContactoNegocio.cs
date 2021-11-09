@@ -14,32 +14,39 @@ namespace CapaNegocios
     public class ContactoNegocio
     {
         private readonly ContactoDatos _dbContactos;
+        private readonly Contacto _entidad;
         private string message;
         public ContactoNegocio()
         {
             _dbContactos = new ContactoDatos();
         }
 
-        public Contacto Get(string filtro = "")
+        public IList<Contacto> Get(string filtro = "")
         {
             var result = _dbContactos.Find(filtro);
 
             return result;
         }
 
-        public ModelViewContactos GetViewModel(string filtro = "")
+        public IList<ModelViewContactos> GetViewModel(string filtro = "")
         {
-            var result = _dbContactos.Find(filtro);
+            var result =_dbContactos.Find(filtro);
 
-            ModelViewContactos viewContactos = new ModelViewContactos();
-            viewContactos.Id = result.Id;
-            viewContactos.Codigo = result.Codigo;
-            viewContactos.Nombres = $"{result.Nombre} {result.Apellido}";
-            viewContactos.Movil = result.Movil;
-            viewContactos.Telefono = result.Telefono;
-            viewContactos.Email = result.Email;
+            IList<ModelViewContactos> contactos = new List<ModelViewContactos>();
+            foreach (var item in result)
+            {
+                contactos.Add(new ModelViewContactos
+                {
+                    Id = item.Id,
+                    Codigo = item.Codigo,
+                    Nombres = $"{item.Nombre} {item.Apellido}",
+                    Movil = item.Movil,
+                    Telefono = item.Telefono,
+                    Email = item.Email
+                });
+            }
 
-            return viewContactos;
+            return contactos;
         }
 
         public string Create(Contacto model)
