@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FrmContactod : Form
+    public partial class FrmContactos : Form
     {
         private readonly ContactoNegocio _negocio;
-        public FrmContactod()
+        public FrmContactos()
         {
             InitializeComponent();
             _negocio = new ContactoNegocio();
@@ -29,6 +29,7 @@ namespace CapaPresentacion
         private void MostrarContactos()
         {
             dgvContactos.DataSource = _negocio.GetViewModel();
+            dgvContactos.Columns[0].Visible = false;
         }
     }
 }

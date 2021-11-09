@@ -14,7 +14,6 @@ namespace CapaNegocios
     public class ContactoNegocio
     {
         private readonly ContactoDatos _dbContactos;
-        private readonly Contacto _entidad;
         private string message;
         public ContactoNegocio()
         {

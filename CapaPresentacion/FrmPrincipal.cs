@@ -66,7 +66,7 @@ namespace CapaPresentacion
 
         private void btnContactos_Click(object sender, EventArgs e)
         {
-            OpenForm<FrmContactod>();
+            OpenForm<FrmContactos>();
         }
     }
 }
