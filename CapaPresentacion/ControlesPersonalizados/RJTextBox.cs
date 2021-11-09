@@ -260,11 +260,6 @@ namespace ControlesPersonalizados.Controles
             this.OnKeyUp(e);
         }
 
-        private void textBox1_VisibleChanged(object sender, EventArgs e)
-        {
-            this.OnVisibleChanged(e);
-        }
-
         private void textBox1_Enter(object sender, EventArgs e)
         {
             isFocused = true;

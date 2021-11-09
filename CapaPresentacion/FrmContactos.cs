@@ -36,5 +36,10 @@ namespace CapaPresentacion
         {
             MostrarContactos(txtFiltro.Text);
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
