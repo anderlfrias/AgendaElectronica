@@ -26,10 +26,15 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void MostrarContactos()
+        private void MostrarContactos(string filtro = "")
         {
-            dgvContactos.DataSource = _negocio.GetViewModel();
+            dgvContactos.DataSource = _negocio.GetViewModel(filtro);
             dgvContactos.Columns[0].Visible = false;
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            MostrarContactos(txtFiltro.Text);
         }
     }
 }

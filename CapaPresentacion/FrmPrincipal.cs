@@ -23,7 +23,7 @@ namespace CapaPresentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void OpenForm<MiForm>() where MiForm : Form, new()
@@ -67,6 +67,16 @@ namespace CapaPresentacion
         private void btnContactos_Click(object sender, EventArgs e)
         {
             OpenForm<FrmContactos>();
+        }
+
+        private void Close()
+        {
+            Application.Exit();
+        }
+
+        private void btnMantenimiento_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmMantenimiento>();
         }
     }
 }
