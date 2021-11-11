@@ -30,6 +30,7 @@ namespace CapaPresentacion
         {
             dgvContactos.DataSource = _negocio.GetViewModel(filtro);
             dgvContactos.Columns[0].Visible = false;
+            dgvContactos.ClearSelection();
         }
 
         private void txtFiltro_TextChanged(object sender, EventArgs e)
@@ -39,7 +40,8 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            FrmMantenimiento mantenimiento = new FrmMantenimiento(dgvContactos.CurrentRow.Cells[0].Value.ToString());
+            mantenimiento.Show();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

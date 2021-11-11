@@ -54,6 +54,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.Location = new System.Drawing.Point(2, 2);
             this.btnCerrar.Name = "btnCerrar";
@@ -256,11 +257,12 @@
             this.txtEmail.PasswordChar = false;
             this.txtEmail.Size = new System.Drawing.Size(208, 32);
             this.txtEmail.TabIndex = 14;
+            this.txtEmail.Tag = "Email";
             this.txtEmail.Texts = "Email";
             this.txtEmail.UnderlinedStyle = true;
-            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
-            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyDown);
-            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
+            this.txtEmail.Enter += new System.EventHandler(this.TextBox_Enter);
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.txtEmail.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
             // txtDireccion
             // 
@@ -278,11 +280,12 @@
             this.txtDireccion.PasswordChar = false;
             this.txtDireccion.Size = new System.Drawing.Size(237, 86);
             this.txtDireccion.TabIndex = 10;
+            this.txtDireccion.Tag = "Direccion";
             this.txtDireccion.Texts = "Direccion";
             this.txtDireccion.UnderlinedStyle = false;
-            this.txtDireccion.Enter += new System.EventHandler(this.txtDireccion_Enter);
-            this.txtDireccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDireccion_KeyDown);
-            this.txtDireccion.Leave += new System.EventHandler(this.txtDireccion_Leave);
+            this.txtDireccion.Enter += new System.EventHandler(this.TextBox_Enter);
+            this.txtDireccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.txtDireccion.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
             // txtTelefono
             // 
@@ -300,11 +303,12 @@
             this.txtTelefono.PasswordChar = false;
             this.txtTelefono.Size = new System.Drawing.Size(208, 32);
             this.txtTelefono.TabIndex = 9;
+            this.txtTelefono.Tag = "Telefono";
             this.txtTelefono.Texts = "Telefono";
             this.txtTelefono.UnderlinedStyle = true;
-            this.txtTelefono.Enter += new System.EventHandler(this.txtTelefono_Enter);
-            this.txtTelefono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTelefono_KeyDown);
-            this.txtTelefono.Leave += new System.EventHandler(this.txtTelefono_Leave);
+            this.txtTelefono.Enter += new System.EventHandler(this.TextBox_Enter);
+            this.txtTelefono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.txtTelefono.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
             // txtMovil
             // 
@@ -322,11 +326,12 @@
             this.txtMovil.PasswordChar = false;
             this.txtMovil.Size = new System.Drawing.Size(208, 32);
             this.txtMovil.TabIndex = 8;
+            this.txtMovil.Tag = "Movil";
             this.txtMovil.Texts = "Movil";
             this.txtMovil.UnderlinedStyle = true;
-            this.txtMovil.Enter += new System.EventHandler(this.txtMovil_Enter);
-            this.txtMovil.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMovil_KeyDown);
-            this.txtMovil.Leave += new System.EventHandler(this.txtMovil_Leave);
+            this.txtMovil.Enter += new System.EventHandler(this.TextBox_Enter);
+            this.txtMovil.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.txtMovil.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
             // txtApellido
             // 
@@ -344,11 +349,12 @@
             this.txtApellido.PasswordChar = false;
             this.txtApellido.Size = new System.Drawing.Size(208, 32);
             this.txtApellido.TabIndex = 6;
+            this.txtApellido.Tag = "Apellido";
             this.txtApellido.Texts = "Apellido";
             this.txtApellido.UnderlinedStyle = true;
-            this.txtApellido.Enter += new System.EventHandler(this.txtApellido_Enter);
-            this.txtApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtApellido_KeyDown);
-            this.txtApellido.Leave += new System.EventHandler(this.txtApellido_Leave);
+            this.txtApellido.Enter += new System.EventHandler(this.TextBox_Enter);
+            this.txtApellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.txtApellido.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
             // txtNombre
             // 
@@ -366,11 +372,12 @@
             this.txtNombre.PasswordChar = false;
             this.txtNombre.Size = new System.Drawing.Size(208, 32);
             this.txtNombre.TabIndex = 5;
+            this.txtNombre.Tag = "Nombre";
             this.txtNombre.Texts = "Nombre";
             this.txtNombre.UnderlinedStyle = true;
-            this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
-            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNombre_KeyDown);
-            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
+            this.txtNombre.Enter += new System.EventHandler(this.TextBox_Enter);
+            this.txtNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
+            this.txtNombre.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
             // FrmMantenimiento
             // 

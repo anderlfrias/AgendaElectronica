@@ -1,5 +1,6 @@
 ﻿using CapaEntidades;
 using CapaNegocios;
+using ControlesPersonalizados.Controles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,36 +16,23 @@ namespace CapaPresentacion
     public partial class FrmMantenimiento : Form
     {
         private string id;
-        private bool _toUpdate;
-        private bool _toCreate;
 
         private Contacto _entity;
         private ContactoNegocio _nContacto;
 
-        public string Id { get => id; set => id = value; }
-
-        public FrmMantenimiento(bool toUpdate = false, bool toCreate = true)
+        public FrmMantenimiento(string id = null)
         {
             InitializeComponent();
-            _toUpdate = toUpdate;
-            _toCreate = toCreate;
-
-            if (_toUpdate)
+            this.id = id;
+           if (this.id != null)
             {
                 RellenarCampos();
             }
         }
 
-        public FrmMantenimiento()
-        {
-            InitializeComponent();
-            _toUpdate = false;
-            _toCreate = true;
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            FormClose();
+            this.Close();
         }
 
         private void cboGenero_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,213 +40,166 @@ namespace CapaPresentacion
 
         }
 
-        private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (txtNombre.Texts == "Nombre")
+            var textBox = (RJTextBox)sender;
+
+            if (textBox.Texts == "Nombre")
             {
-                txtNombre.Texts = "";
+                textBox.Texts = "";
                 lblNombre.Visible = true;
             }
-        }
-
-        private void txtNombre_Enter(object sender, EventArgs e)
-        {
-            if (txtNombre.Texts == "Nombre" || txtNombre.Texts == "")
+            else if (textBox.Texts == "Apellido")
             {
-                lblNombre.Visible = false;
-                txtNombre.Texts = "Nombre";
-            }
-            else
-            {
-                lblNombre.Visible = true;
-            }
-        }
-
-        private void txtNombre_Leave(object sender, EventArgs e)
-        {
-            if (txtNombre.Texts == "Nombre" || txtNombre.Texts == "")
-            {
-                lblNombre.Visible = false;
-                txtNombre.Texts = "Nombre";
-            }
-        }
-
-        
-        private void txtApellido_Enter(object sender, EventArgs e)
-        {
-            if (txtApellido.Texts == "Apellido" || txtApellido.Texts == "")
-            {
-                lblApellido.Visible = false;
-                txtApellido.Texts = "Apellido";
-            }
-            else
-            {
+                textBox.Texts = "";
                 lblApellido.Visible = true;
             }
-        }
-
-        private void txtApellido_Leave(object sender, EventArgs e)
-        {
-            if (txtApellido.Texts == "Apellido" || txtApellido.Texts == "")
+            else if (textBox.Texts == "Movil")
             {
-                lblApellido.Visible = false;
-                txtApellido.Texts = "Apellido";
-            }
-        }
-
-        private void txtApellido_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (txtApellido.Texts == "Apellido")
-            {
-                txtApellido.Texts = "";
-                lblApellido.Visible = true;
-            }
-        }
-
-        
-        private void txtMovil_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (txtMovil.Texts == "Movil")
-            {
-                txtMovil.Texts = "";
+                textBox.Texts = "";
                 lblMovil.Visible = true;
             }
-        }
-
-        private void txtMovil_Enter(object sender, EventArgs e)
-        {
-            if (txtMovil.Texts == "Movil" || txtMovil.Texts == "")
+            else if (textBox.Texts == "Telefono")
             {
-                lblMovil.Visible = false;
-                txtMovil.Texts = "Movil";
-            }
-            else
-            {
-                lblMovil.Visible = true;
-            }
-        }
-
-        private void txtMovil_Leave(object sender, EventArgs e)
-        {
-            if (txtMovil.Texts == "Movil" || txtMovil.Texts == "")
-            {
-                lblMovil.Visible = false;
-                txtMovil.Texts = "Movil";
-            }
-        }
-
-        
-        private void txtTelefono_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (txtTelefono.Texts == "Telefono")
-            {
-                txtTelefono.Texts = "";
+                textBox.Texts = "";
                 lblTelefono.Visible = true;
             }
-        }
-
-        private void txtTelefono_Enter(object sender, EventArgs e)
-        {
-            if (txtTelefono.Texts == "Telefono" || txtTelefono.Texts == "")
+            else if (textBox.Texts == "Email")
             {
-                lblTelefono.Visible = false;
-                txtTelefono.Texts = "Telefono";
-            }
-            else
-            {
-                lblTelefono.Visible = true;
-            }
-        }
-
-        private void txtTelefono_Leave(object sender, EventArgs e)
-        {
-            if (txtTelefono.Texts == "Telefono" || txtTelefono.Texts == "")
-            {
-                lblTelefono.Visible = false;
-                txtTelefono.Texts = "Telefono";
-            }
-        }
-
-        
-        private void txtEmail_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (txtEmail.Texts == "Email")
-            {
-                txtEmail.Texts = "";
+                textBox.Texts = "";
                 lblEmail.Visible = true;
             }
-        }
-
-        private void txtEmail_Enter(object sender, EventArgs e)
-        {
-            if (txtEmail.Texts == "Email" || txtEmail.Texts == "")
+            else if (textBox.Texts == "Direccion")
             {
-                lblEmail.Visible = false;
-                txtEmail.Texts = "Email";
-            }
-            else
-            {
-                lblEmail.Visible = true;
-            }
-        }
-
-        private void txtEmail_Leave(object sender, EventArgs e)
-        {
-            if (txtEmail.Texts == "Email" || txtEmail.Texts == "")
-            {
-                lblEmail.Visible = false;
-                txtEmail.Texts = "Email";
-            }
-        }
-
-        
-        private void txtDireccion_Enter(object sender, EventArgs e)
-        {
-            if (txtDireccion.Texts == "Direccion" || txtDireccion.Texts == "")
-            {
-                lblDireccion.Visible = false;
-                txtDireccion.Texts = "Direccion";
-            }
-            else
-            {
+                textBox.Texts = "";
                 lblDireccion.Visible = true;
             }
         }
 
-        private void txtDireccion_KeyDown(object sender, KeyEventArgs e)
+        private void TextBox_Enter(object sender, EventArgs e)
         {
-            if (txtDireccion.Texts == "Direccion")
+            var textBox = (RJTextBox)sender;
+
+            if(textBox.Tag.ToString() == "Nombre")
             {
-                txtDireccion.Texts = "";
-                lblDireccion.Visible = true;
+                if (textBox.Texts == "Nombre" || textBox.Texts == "")
+                {
+                    lblNombre.Visible = false;
+                    textBox.Texts = "Nombre";
+                }
+                else
+                {
+                    lblNombre.Visible = true;
+                }
+            }
+            else if (textBox.Tag.ToString() == "Apellido")
+            {
+                if (textBox.Texts == "Apellido" || textBox.Texts == "")
+                {
+                    lblApellido.Visible = false;
+                    textBox.Texts = "Apellido";
+                }
+                else
+                {
+                    lblApellido.Visible = true;
+                }
+            }
+            else if (textBox.Tag.ToString() == "Movil")
+            {
+                if (textBox.Texts == "Movil" || textBox.Texts == "")
+                {
+                    lblMovil.Visible = false;
+                    textBox.Texts = "Movil";
+                }
+                else
+                {
+                    lblMovil.Visible = true;
+                }
+            }
+            else if (textBox.Tag.ToString() == "Telefono")
+            {
+                if (textBox.Texts == "Telefono" || textBox.Texts == "")
+                {
+                    lblTelefono.Visible = false;
+                    textBox.Texts = "Telefono";
+                }
+                else
+                {
+                    lblTelefono.Visible = true;
+                }
+            }
+            else if (textBox.Tag.ToString() == "Email")
+            {
+                if (textBox.Texts == "Email" || textBox.Texts == "")
+                {
+                    lblEmail.Visible = false;
+                    textBox.Texts = "Email";
+                }
+                else
+                {
+                    lblEmail.Visible = true;
+                }
+            }
+            else if (textBox.Tag.ToString() == "Direccion")
+            {
+                if (textBox.Texts == "Direccion" || textBox.Texts == "")
+                {
+                    lblDireccion.Visible = false;
+                    textBox.Texts = "Direccion";
+                }
+                else
+                {
+                    lblDireccion.Visible = true;
+                }
             }
         }
 
-        private void txtDireccion_Leave(object sender, EventArgs e)
+        private void TextBox_Leave(object sender, EventArgs e)
         {
-            if (txtDireccion.Texts == "Direccion" || txtDireccion.Texts == "")
+            var textBox = (RJTextBox)sender;
+
+            if (textBox.Texts == ""){
+                textBox.Texts = textBox.Tag.ToString();
+            }
+            if (textBox.Texts == "Nombre")
+            {
+                lblNombre.Visible = false;
+                textBox.Texts = "Nombre";
+            }
+            else if (textBox.Texts == "Apellido")
+            {
+                lblApellido.Visible = false;
+                textBox.Texts = "Apellido";
+            }
+            else if (textBox.Texts == "Movil")
+            {
+                lblMovil.Visible = false;
+                textBox.Texts = "Movil";
+            }
+            else if (textBox.Texts == "Telefono")
+            {
+                lblTelefono.Visible = false;
+                textBox.Texts = "Telefono";
+            }
+            else if (textBox.Texts == "Email")
+            {
+                lblEmail.Visible = false;
+                textBox.Texts = "Email";
+            }
+            else if (textBox.Texts == "Direccion")
             {
                 lblDireccion.Visible = false;
-                txtDireccion.Texts = "Direccion";
+                textBox.Texts = "Dirrecion";
             }
         }
-
+        
         private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            FormClose();
-        }
-
-        private void FormClose()
         {
             this.Close();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (_toCreate)
-            {
-                CrearContacto();
-            }
         }
 
         private void CrearContacto()
@@ -266,8 +207,6 @@ namespace CapaPresentacion
 
             _entity = new Contacto();
             _nContacto = new ContactoNegocio();
-
-            _entity.Id = Id;
             _entity.Nombre = txtNombre.Texts.ToUpper();
             _entity.Apellido = txtApellido.Texts.ToUpper();
             _entity.Movil = txtMovil.Texts.ToUpper();
@@ -313,7 +252,7 @@ namespace CapaPresentacion
 
         private void RellenarCampos()
         {
-            MessageBox.Show("Updating contacto...");
+            MessageBox.Show("Updating contacto..."+id, "Informacion");
         }
 
         private void Limpiar()
@@ -327,8 +266,8 @@ namespace CapaPresentacion
             txtDireccion.Texts = "Direccion";
 
             //ComboBox
-            cboGenero.SelectedIndex = 0;
-            cboEstadoCivil.SelectedIndex = 0;
+            cboGenero.Text = "Genero";
+            cboEstadoCivil.Text = "Estado Civil";
         }
     }
 }
