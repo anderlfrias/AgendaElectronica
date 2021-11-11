@@ -14,17 +14,30 @@ CREATE TABLE Contactos
 	EstadoCivil NVARCHAR(1),
 	Movil NVARCHAR(15),
 	Telefono NVARCHAR(15),
-	CoreoElectronico NVARCHAR(50)
+	CorreoElectronico NVARCHAR(50)
 );
 
 --STORE PROCEDURE
+GO
+CREATE PROCEDURE SP_FINDBYID
+	@Id NVARCHAR(255)
+AS
+	SELECT *
+	FROM Contactos
+	WHERE Id = @Id
+	ORDER BY Nombre ASC;
+
 GO
 CREATE PROCEDURE SP_BUSCAR
 	@Buscar NVARCHAR(30)
 AS
 	SELECT *
 	FROM Contactos
-	WHERE Nombre LIKE '%'+@Buscar+'%' OR Apellido LIKE '%'+@Buscar+'%';
+	WHERE Nombre LIKE '%'+@Buscar+'%' 
+		OR Apellido LIKE '%'+@Buscar+'%'
+		OR Movil LIKE '%'+@Buscar+'%'
+		OR Telefono LIKE '%'+@Buscar+'%'
+	ORDER BY Nombre ASC;
 
 GO
 CREATE PROCEDURE SP_INSERTAR
@@ -37,7 +50,7 @@ CREATE PROCEDURE SP_INSERTAR
 	@EstadoCivil NVARCHAR(2),
 	@Movil NVARCHAR(15),
 	@Telefono NVARCHAR(15),
-	@CoreoElectronico NVARCHAR(50)
+	@CorreoElectronico NVARCHAR(50)
 AS
 	INSERT INTO Contactos VALUES
 	(
@@ -50,7 +63,7 @@ AS
 		@EstadoCivil, 
 		@Movil, 
 		@Telefono, 
-		@CoreoElectronico
+		@CorreoElectronico
 	);
 
 GO
@@ -64,7 +77,7 @@ CREATE PROCEDURE SP_MODIFICAR
 	@EstadoCivil NVARCHAR(2),
 	@Movil NVARCHAR(15),
 	@Telefono NVARCHAR(15),
-	@CoreoElectronico NVARCHAR(50)
+	@CorreoElectronico NVARCHAR(50)
 AS
 	UPDATE Contactos
 	SET Nombre = @Nombre,
@@ -75,7 +88,7 @@ AS
 		EstadoCivil = @EstadoCivil,
 		Movil = @Movil,
 		Telefono = @Telefono,
-		CoreoElectronico = @CoreoElectronico
+		CorreoElectronico = @CoreoElectronico
 	WHERE Id = @Id;
 
 GO

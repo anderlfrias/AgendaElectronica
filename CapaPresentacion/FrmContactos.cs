@@ -13,7 +13,7 @@ namespace CapaPresentacion
 {
     public partial class FrmContactos : Form
     {
-        private readonly ContactoNegocio _negocio;
+        private ContactoNegocio _negocio;
         public FrmContactos()
         {
             InitializeComponent();
@@ -40,6 +40,10 @@ namespace CapaPresentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
         }
     }
 }

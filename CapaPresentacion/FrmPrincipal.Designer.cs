@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnMantenimiento = new System.Windows.Forms.Button();
             this.btnContactos = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.pnlInicio = new System.Windows.Forms.Panel();
@@ -65,7 +64,7 @@
             this.pnlEncabezado.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEncabezado.Location = new System.Drawing.Point(0, 0);
             this.pnlEncabezado.Name = "pnlEncabezado";
-            this.pnlEncabezado.Size = new System.Drawing.Size(751, 30);
+            this.pnlEncabezado.Size = new System.Drawing.Size(735, 30);
             this.pnlEncabezado.TabIndex = 0;
             this.pnlEncabezado.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlEncabezado_MouseDown);
             // 
@@ -84,7 +83,7 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(697, 1);
+            this.btnMinimizar.Location = new System.Drawing.Point(681, 1);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(27, 27);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,7 +96,7 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(723, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(707, 1);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(27, 27);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -121,14 +120,13 @@
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.pnlMenu.Controls.Add(this.btnSalir);
-            this.pnlMenu.Controls.Add(this.btnMantenimiento);
             this.pnlMenu.Controls.Add(this.btnContactos);
             this.pnlMenu.Controls.Add(this.btnInicio);
             this.pnlMenu.Controls.Add(this.pnlInicio);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 30);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(172, 487);
+            this.pnlMenu.Size = new System.Drawing.Size(172, 448);
             this.pnlMenu.TabIndex = 1;
             // 
             // btnSalir
@@ -140,7 +138,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(0, 214);
+            this.btnSalir.Location = new System.Drawing.Point(0, 222);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(172, 41);
@@ -151,26 +149,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnMantenimiento
-            // 
-            this.btnMantenimiento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMantenimiento.FlatAppearance.BorderSize = 0;
-            this.btnMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMantenimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMantenimiento.ForeColor = System.Drawing.Color.White;
-            this.btnMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnMantenimiento.Image")));
-            this.btnMantenimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMantenimiento.Location = new System.Drawing.Point(0, 173);
-            this.btnMantenimiento.Name = "btnMantenimiento";
-            this.btnMantenimiento.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnMantenimiento.Size = new System.Drawing.Size(172, 41);
-            this.btnMantenimiento.TabIndex = 3;
-            this.btnMantenimiento.Text = "   Mantenimiento";
-            this.btnMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMantenimiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMantenimiento.UseVisualStyleBackColor = true;
-            this.btnMantenimiento.Click += new System.EventHandler(this.btnMantenimiento_Click);
-            // 
             // btnContactos
             // 
             this.btnContactos.Dock = System.Windows.Forms.DockStyle.Top;
@@ -180,7 +158,7 @@
             this.btnContactos.ForeColor = System.Drawing.Color.White;
             this.btnContactos.Image = ((System.Drawing.Image)(resources.GetObject("btnContactos.Image")));
             this.btnContactos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContactos.Location = new System.Drawing.Point(0, 132);
+            this.btnContactos.Location = new System.Drawing.Point(0, 181);
             this.btnContactos.Name = "btnContactos";
             this.btnContactos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnContactos.Size = new System.Drawing.Size(172, 41);
@@ -200,7 +178,7 @@
             this.btnInicio.ForeColor = System.Drawing.Color.White;
             this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
             this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInicio.Location = new System.Drawing.Point(0, 91);
+            this.btnInicio.Location = new System.Drawing.Point(0, 140);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnInicio.Size = new System.Drawing.Size(172, 41);
@@ -209,6 +187,7 @@
             this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // pnlInicio
             // 
@@ -217,7 +196,7 @@
             this.pnlInicio.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlInicio.Location = new System.Drawing.Point(0, 0);
             this.pnlInicio.Name = "pnlInicio";
-            this.pnlInicio.Size = new System.Drawing.Size(172, 91);
+            this.pnlInicio.Size = new System.Drawing.Size(172, 140);
             this.pnlInicio.TabIndex = 0;
             // 
             // label2
@@ -225,7 +204,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(63, 34);
+            this.label2.Location = new System.Drawing.Point(63, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 25);
             this.label2.TabIndex = 1;
@@ -234,7 +213,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(12, 25);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 52);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(46, 40);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,7 +227,7 @@
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(172, 30);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(579, 487);
+            this.pnlPrincipal.Size = new System.Drawing.Size(563, 448);
             this.pnlPrincipal.TabIndex = 2;
             // 
             // pictureBox2
@@ -257,9 +236,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(130, 122);
+            this.pictureBox2.Location = new System.Drawing.Point(138, 140);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(318, 242);
+            this.pictureBox2.Size = new System.Drawing.Size(302, 203);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -268,7 +247,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 517);
+            this.ClientSize = new System.Drawing.Size(735, 478);
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlEncabezado);
@@ -306,7 +285,6 @@
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Button btnContactos;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnMantenimiento;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

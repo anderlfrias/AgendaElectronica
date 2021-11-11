@@ -214,19 +214,6 @@
         RmIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnMantenimiento.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QsJDgEqSLuLlwAAAYVJREFU
-        SEvllbtKA0EUhjcISqyCohaWotgIlrFTqyC+gIK+hkUwdmnSaGfjC2grCoLGRgsLwQu+iOAFL+N3Zs8m
-        m93ZiRtS6QdfMWf+OZtkdibB/8EYs4xb6oKW+wdNHzCiqeXeoEEJd3BSx6P4jREvOKRzU1jDYRl3haA0
-        v0HhGevYtKNOTrCBr3ZkzDl2fwihXRvvjW1tkw2hOfyw8Xy84Yy28UPwwC7JR0OX+yFYxGu7pJMzXMMN
-        vJJCAtmTQW2ThskyymZGmxbnGAsalewAuj6EvF0XWNZoG4pVSWSworEW1DbDKSdVjbWRYjjnpKKxFtTW
-        wyknzgcs4T3GD1TEocYsjAso732SL7zDRY2mYXIMbzHJEVZwFU+lkED2b0Tb+CG4b5fko67L/RCcRjk0
-        eZFrxd5dXgjt2Xhv1LRNNoQm8MnGjXlH+blceyLnQE78px2FF2RJ2/ghKA+RbzKr43GMv13yExZ1bh7l
-        gvxd8yxo8IgRl1ruHzSN/2Wmr4I/ShD8AJxi4XiuXhv/AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnContactos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

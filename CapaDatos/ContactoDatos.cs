@@ -52,6 +52,36 @@ namespace CapaDatos
             return contactos;
         }
 
+        public Contacto FindById(string id)
+        {
+            SqlDataReader LeerFila;
+            SqlCommand command = new SqlCommand("SP_FINDBYID", sqlConnection);
+
+            command.CommandType = CommandType.StoredProcedure;
+            sqlConnection.Open();
+
+            command.Parameters.AddWithValue("@Id", id);
+            LeerFila = command.ExecuteReader();
+
+            Contacto contacto = new Contacto();
+
+            contacto.Id = LeerFila.GetString(0);
+            contacto.Codigo = LeerFila.GetString(1);
+            contacto.Nombre = LeerFila.GetString(2);
+            contacto.Apellido = LeerFila.GetString(3);
+            contacto.FechaNacimiento = LeerFila.GetDateTime(4);
+            contacto.Direccion = LeerFila.GetString(5);
+            contacto.Genero = LeerFila.GetString(6);
+            contacto.EstadoCivil = LeerFila.GetString(7);
+            contacto.Movil = LeerFila.GetString(8);
+            contacto.Telefono = LeerFila.GetString(9);
+            contacto.Email = LeerFila.GetString(10);
+
+            sqlConnection.Close();
+            LeerFila.Close();
+            return contacto;
+        }
+
         public void Add(Contacto model)
         {
             SqlCommand command = new SqlCommand("SP_INSERTAR", sqlConnection);

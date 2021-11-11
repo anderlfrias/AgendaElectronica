@@ -272,15 +272,22 @@ namespace CapaPresentacion
             _entity.Apellido = txtApellido.Texts.ToUpper();
             _entity.Movil = txtMovil.Texts.ToUpper();
             _entity.Telefono = txtTelefono.Texts.ToUpper();
-            _entity.Email = txtEmail.Texts.ToUpper();
+            _entity.Email = txtEmail.Texts;
             _entity.Direccion = txtDireccion.Texts.ToUpper();
             _entity.FechaNacimiento = dtpFecha.Value;
             _entity.Genero = cboGenero.SelectedItem.ToString().ToUpper();
             _entity.EstadoCivil = cboEstadoCivil.SelectedItem.ToString().ToUpper();
 
             var result = _nContacto.Create(_entity);
-
-            MessageBox.Show(result, "Informacion");
+            if (result == "Contacto guardado correctamente")
+            {
+                Limpiar();
+                MessageBox.Show(result, "Informacion");
+            }
+            else
+            {
+                MessageBox.Show(result, "Error");
+            }
         }
 
         private void EditarContacto()
@@ -293,7 +300,7 @@ namespace CapaPresentacion
             _entity.Apellido = txtApellido.Texts.ToUpper();
             _entity.Movil = txtMovil.Texts.ToUpper();
             _entity.Telefono = txtTelefono.Texts.ToUpper();
-            _entity.Email = txtEmail.Texts.ToUpper();
+            _entity.Email = txtEmail.Texts;
             _entity.Direccion = txtDireccion.Texts.ToUpper();
             _entity.FechaNacimiento = dtpFecha.Value;
             _entity.Genero = cboGenero.SelectedItem.ToString().ToUpper();
@@ -307,6 +314,21 @@ namespace CapaPresentacion
         private void RellenarCampos()
         {
             MessageBox.Show("Updating contacto...");
+        }
+
+        private void Limpiar()
+        {
+            //TextBox
+            txtNombre.Texts = "Nombre";
+            txtApellido.Texts = "Apellido";
+            txtMovil.Texts = "Movil";
+            txtTelefono.Texts = "Telefono";
+            txtEmail.Texts = "Email";
+            txtDireccion.Texts = "Direccion";
+
+            //ComboBox
+            cboGenero.SelectedIndex = 0;
+            cboEstadoCivil.SelectedIndex = 0;
         }
     }
 }

@@ -14,6 +14,7 @@ namespace CapaPresentacion
 {
     public partial class FrmPrincipal : Form
     {
+        private Form formulario;
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -23,12 +24,11 @@ namespace CapaPresentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            FormClose();
+            Application.Exit();
         }
 
         private void OpenForm<MiForm>() where MiForm : Form, new()
         {
-            Form formulario;
             formulario = pnlPrincipal.Controls.OfType<MiForm>().FirstOrDefault();//Busca en la colecion el formulario
                                                                                      //si el formulario/instancia no existe
             if (formulario == null)
@@ -69,19 +69,17 @@ namespace CapaPresentacion
             OpenForm<FrmContactos>();
         }
 
-        private void FormClose()
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnMantenimiento_Click(object sender, EventArgs e)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-            OpenForm<FrmMantenimiento>();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            FormClose();
+            if(formulario != null)
+            {
+                formulario.Close();
+            }
         }
     }
 }

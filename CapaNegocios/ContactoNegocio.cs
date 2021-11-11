@@ -23,7 +23,12 @@ namespace CapaNegocios
         public IList<Contacto> Get(string filtro = "")
         {
             var result = _dbContactos.Find(filtro);
+            return result;
+        }
 
+        public Contacto GetById(string id)
+        {
+            var result = _dbContactos.FindById(id);
             return result;
         }
 
@@ -52,7 +57,7 @@ namespace CapaNegocios
         {
             try
             {
-                model.Id = Guid.NewGuid().ToString();
+                model.Id = Guid.NewGuid().ToString().ToUpper();
                 _dbContactos.Add(model);
                 message = "Contacto guardado correctamente.";
             }catch(System.Exception ex)
