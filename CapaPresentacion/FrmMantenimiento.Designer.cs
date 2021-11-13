@@ -239,7 +239,6 @@
             this.lblFecha.Size = new System.Drawing.Size(122, 15);
             this.lblFecha.TabIndex = 23;
             this.lblFecha.Text = "Fecha de Nacimiento:";
-            this.lblFecha.Visible = false;
             // 
             // txtEmail
             // 
@@ -405,7 +404,9 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCerrar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmMantenimiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMantenimiento";
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);

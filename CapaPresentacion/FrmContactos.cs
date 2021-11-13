@@ -102,7 +102,11 @@ namespace CapaPresentacion
         private void dgvContactos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvContactos.CurrentRow.Cells[0].Value.ToString();
-            MessageBox.Show(id);
+        }
+
+        private void dgvContactos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

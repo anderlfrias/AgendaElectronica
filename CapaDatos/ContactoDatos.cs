@@ -91,7 +91,7 @@ namespace CapaDatos
             command.CommandType = CommandType.StoredProcedure;
             sqlConnection.Open();
 
-            command.Parameters.AddWithValue("Id", model.Id);
+            command.Parameters.AddWithValue("@Id", model.Id);
             command.Parameters.AddWithValue("@Nombre", model.Nombre);
             command.Parameters.AddWithValue("@Apellido", model.Apellido);
             command.Parameters.AddWithValue("@FechaNacimiento", model.FechaNacimiento);

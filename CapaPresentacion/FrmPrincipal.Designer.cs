@@ -126,7 +126,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 30);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(172, 448);
+            this.pnlMenu.Size = new System.Drawing.Size(172, 487);
             this.pnlMenu.TabIndex = 1;
             // 
             // btnSalir
@@ -227,7 +227,7 @@
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(172, 30);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(692, 448);
+            this.pnlPrincipal.Size = new System.Drawing.Size(692, 487);
             this.pnlPrincipal.TabIndex = 2;
             // 
             // pictureBox2
@@ -238,7 +238,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(138, 140);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(431, 203);
+            this.pictureBox2.Size = new System.Drawing.Size(431, 242);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -251,6 +251,7 @@
             this.Controls.Add(this.pnlPrincipal);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlEncabezado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(751, 517);
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
