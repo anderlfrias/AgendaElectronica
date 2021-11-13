@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEDEB6A2-04D7-4095-A139-1EB0B91B96FC}"
 	ProjectSection(SolutionItems) = preProject
 		DbAgendaElectronica.sql = DbAgendaElectronica.sql
+		Url_del_video_en_YouTube.txt = Url_del_video_en_YouTube.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocios", "CapaNegocios\CapaNegocios.csproj", "{22BFB7D6-EA13-436C-B493-27283B698779}"
