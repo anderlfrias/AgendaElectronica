@@ -16,18 +16,38 @@ namespace CapaPresentacion
     public partial class FrmMantenimiento : Form
     {
         private string id;
+        private bool nuevo = true;
 
         private Contacto _entity;
         private ContactoNegocio _nContacto;
 
-        public FrmMantenimiento(string id = null)
+        public FrmMantenimiento(string id = null, bool detalles = false)
         {
             InitializeComponent();
+            _entity = new Contacto();
+            _nContacto = new ContactoNegocio();
             this.id = id;
            if (this.id != null)
-            {
+           {
                 RellenarCampos();
-            }
+                nuevo = false;
+           }
+
+            if (detalles)
+                BloquearTextBox();
+        }
+
+        private void BloquearTextBox()
+        {
+            txtNombre.Enabled = false;
+            txtApellido.Enabled = false;
+            txtMovil.Enabled = false;
+            txtTelefono.Enabled = false;
+            txtEmail.Enabled = false;
+            txtDireccion.Enabled = false;
+            cboEstadoCivil.Enabled = false;
+            cboGenero.Enabled = false;
+            dtpFecha.Enabled = false;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -200,13 +220,14 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (nuevo)
+                CrearContacto();
+            else
+                EditarContacto();
         }
 
         private void CrearContacto()
         {
-
-            _entity = new Contacto();
-            _nContacto = new ContactoNegocio();
             _entity.Nombre = txtNombre.Texts.ToUpper();
             _entity.Apellido = txtApellido.Texts.ToUpper();
             _entity.Movil = txtMovil.Texts.ToUpper();
@@ -218,22 +239,12 @@ namespace CapaPresentacion
             _entity.EstadoCivil = cboEstadoCivil.SelectedItem.ToString().ToUpper();
 
             var result = _nContacto.Create(_entity);
-            if (result == "Contacto guardado correctamente")
-            {
-                Limpiar();
-                MessageBox.Show(result, "Informacion");
-            }
-            else
-            {
-                MessageBox.Show(result, "Error");
-            }
+            Limpiar();
+            MessageBox.Show(result, "Informacion");
         }
 
         private void EditarContacto()
         {
-            _entity = new Contacto();
-            _nContacto = new ContactoNegocio();
-
             _entity.Id = id;
             _entity.Nombre = txtNombre.Texts.ToUpper();
             _entity.Apellido = txtApellido.Texts.ToUpper();
@@ -246,24 +257,62 @@ namespace CapaPresentacion
             _entity.EstadoCivil = cboEstadoCivil.SelectedItem.ToString().ToUpper();
 
             var result = _nContacto.Update(_entity);
-
             MessageBox.Show(result, "Informacion");
+            Limpiar();
         }
 
         private void RellenarCampos()
         {
-            MessageBox.Show("Updating contacto..."+id, "Informacion");
+            //MessageBox.Show("Updating contacto..."+id, "Informacion");
+            var result = _nContacto.GetById(id);
+
+            if(result != null)
+            {
+                txtNombre.Texts = result.Nombre;
+                txtApellido.Texts = result.Apellido;
+                txtMovil.Texts = result.Movil;
+                txtTelefono.Texts = result.Telefono;
+                txtEmail.Texts = result.Email;
+                txtDireccion.Texts = result.Direccion;
+                dtpFecha.Value = result.FechaNacimiento;
+
+                if (result.Genero.ToUpper() == "MASCULINO")
+                    cboGenero.SelectedIndex = 1;
+                else if (result.Genero == "FEMENINO")
+                    cboGenero.SelectedIndex = 2;
+
+                if (result.EstadoCivil.ToUpper() == "SOLTERO/A")
+                    cboEstadoCivil.SelectedIndex = 1;
+                else if (result.EstadoCivil.ToUpper() == "CASADO/A")
+                    cboEstadoCivil.SelectedIndex = 2;
+                else if (result.EstadoCivil.ToUpper() == "DIVORSIADO/A")
+                    cboEstadoCivil.SelectedIndex = 3;
+                else if (result.EstadoCivil.ToUpper() == "VIUDA")
+                    cboEstadoCivil.SelectedIndex = 4;
+            }
+            else
+            {
+                MessageBox.Show("Contacto no encontrado");
+            }
         }
 
         private void Limpiar()
         {
             //TextBox
+            //txtNombre.ResetText();
+            //txtApellido.ResetText();
+            //txtMovil.ResetText();
+            //txtTelefono.ResetText();
+            //txtEmail.ResetText();
+            //txtDireccion.ResetText();
+
             txtNombre.Texts = "Nombre";
             txtApellido.Texts = "Apellido";
             txtMovil.Texts = "Movil";
             txtTelefono.Texts = "Telefono";
             txtEmail.Texts = "Email";
             txtDireccion.Texts = "Direccion";
+            dtpFecha.Value = DateTime.Now;
 
             //ComboBox
             cboGenero.Text = "Genero";

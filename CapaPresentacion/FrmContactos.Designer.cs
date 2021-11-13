@@ -29,9 +29,9 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContactos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmContactos));
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalles = new System.Windows.Forms.Button();
@@ -42,15 +42,18 @@ namespace CapaPresentacion
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvContactos = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPrincipal
             // 
+            this.pnlPrincipal.Controls.Add(this.btnRefresh);
             this.pnlPrincipal.Controls.Add(this.btnEliminar);
             this.pnlPrincipal.Controls.Add(this.btnDetalles);
             this.pnlPrincipal.Controls.Add(this.btnEditar);
@@ -63,7 +66,7 @@ namespace CapaPresentacion
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(563, 448);
+            this.pnlPrincipal.Size = new System.Drawing.Size(638, 448);
             this.pnlPrincipal.TabIndex = 0;
             // 
             // btnEliminar
@@ -76,7 +79,7 @@ namespace CapaPresentacion
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(427, 406);
+            this.btnEliminar.Location = new System.Drawing.Point(502, 406);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnEliminar.Size = new System.Drawing.Size(124, 34);
@@ -84,6 +87,7 @@ namespace CapaPresentacion
             this.btnEliminar.Text = "       Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnDetalles
             // 
@@ -95,7 +99,7 @@ namespace CapaPresentacion
             this.btnDetalles.ForeColor = System.Drawing.Color.White;
             this.btnDetalles.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalles.Image")));
             this.btnDetalles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetalles.Location = new System.Drawing.Point(22, 406);
+            this.btnDetalles.Location = new System.Drawing.Point(97, 406);
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnDetalles.Size = new System.Drawing.Size(139, 34);
@@ -103,6 +107,7 @@ namespace CapaPresentacion
             this.btnDetalles.Text = "       Detalles";
             this.btnDetalles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetalles.UseVisualStyleBackColor = false;
+            this.btnDetalles.Click += new System.EventHandler(this.btnDetalles_Click);
             // 
             // btnEditar
             // 
@@ -114,7 +119,7 @@ namespace CapaPresentacion
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(297, 406);
+            this.btnEditar.Location = new System.Drawing.Point(372, 406);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnEditar.Size = new System.Drawing.Size(124, 34);
@@ -178,7 +183,7 @@ namespace CapaPresentacion
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(167, 406);
+            this.btnNuevo.Location = new System.Drawing.Point(242, 406);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnNuevo.Size = new System.Drawing.Size(124, 34);
@@ -198,7 +203,7 @@ namespace CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvContactos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
-            this.dgvContactos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgvContactos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.dgvContactos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvContactos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvContactos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -222,7 +227,7 @@ namespace CapaPresentacion
             this.dgvContactos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvContactos.RowHeadersVisible = false;
             this.dgvContactos.RowHeadersWidth = 40;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
@@ -230,16 +235,30 @@ namespace CapaPresentacion
             this.dgvContactos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvContactos.RowTemplate.Height = 50;
             this.dgvContactos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContactos.Size = new System.Drawing.Size(556, 297);
+            this.dgvContactos.Size = new System.Drawing.Size(631, 297);
             this.dgvContactos.TabIndex = 9;
+            this.dgvContactos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContactos_CellContentClick);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(303, 39);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(35, 33);
+            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRefresh.TabIndex = 18;
+            this.btnRefresh.TabStop = false;
+            this.btnRefresh.Click += new System.EventHandler(this.txtFiltro_TextChanged);
             // 
             // FrmContactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(563, 448);
+            this.ClientSize = new System.Drawing.Size(638, 448);
             this.Controls.Add(this.pnlPrincipal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmContactos";
             this.Text = "FrmContactod";
             this.pnlPrincipal.ResumeLayout(false);
@@ -248,6 +267,7 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,5 +284,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView dgvContactos;
+        private System.Windows.Forms.PictureBox btnRefresh;
     }
 }

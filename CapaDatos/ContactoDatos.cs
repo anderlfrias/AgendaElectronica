@@ -20,12 +20,12 @@ namespace CapaDatos
         public IList<Contacto> Find(string filtrar)
         {
             SqlDataReader LeerFilas;
-            SqlCommand command = new SqlCommand("SP_BUSCAR", sqlConnection);
+            SqlCommand command = new SqlCommand("SP_FILTRAR", sqlConnection);
 
             command.CommandType = CommandType.StoredProcedure;
             sqlConnection.Open();
 
-            command.Parameters.AddWithValue("@Buscar", filtrar);
+            command.Parameters.AddWithValue("@Filtrar", filtrar);
             LeerFilas = command.ExecuteReader();
 
             IList<Contacto> contactos = new List<Contacto>();
@@ -65,17 +65,20 @@ namespace CapaDatos
 
             Contacto contacto = new Contacto();
 
-            contacto.Id = LeerFila.GetString(0);
-            contacto.Codigo = LeerFila.GetString(1);
-            contacto.Nombre = LeerFila.GetString(2);
-            contacto.Apellido = LeerFila.GetString(3);
-            contacto.FechaNacimiento = LeerFila.GetDateTime(4);
-            contacto.Direccion = LeerFila.GetString(5);
-            contacto.Genero = LeerFila.GetString(6);
-            contacto.EstadoCivil = LeerFila.GetString(7);
-            contacto.Movil = LeerFila.GetString(8);
-            contacto.Telefono = LeerFila.GetString(9);
-            contacto.Email = LeerFila.GetString(10);
+            while (LeerFila.Read())
+            {
+                contacto.Id = LeerFila.GetString(0);
+                contacto.Codigo = LeerFila.GetString(1);
+                contacto.Nombre = LeerFila.GetString(2);
+                contacto.Apellido = LeerFila.GetString(3);
+                contacto.FechaNacimiento = LeerFila.GetDateTime(4);
+                contacto.Direccion = LeerFila.GetString(5);
+                contacto.Genero = LeerFila.GetString(6);
+                contacto.EstadoCivil = LeerFila.GetString(7);
+                contacto.Movil = LeerFila.GetString(8);
+                contacto.Telefono = LeerFila.GetString(9);
+                contacto.Email = LeerFila.GetString(10);
+            }
 
             sqlConnection.Close();
             LeerFila.Close();

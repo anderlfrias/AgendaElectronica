@@ -10,8 +10,8 @@ CREATE TABLE Contactos
 	Apellido NVARCHAR(50),
 	FechaNacimiento DATE,
 	Direccion NVARCHAR(100),
-	Genero NVARCHAR(1),
-	EstadoCivil NVARCHAR(1),
+	Genero NVARCHAR(15),
+	EstadoCivil NVARCHAR(15),
 	Movil NVARCHAR(15),
 	Telefono NVARCHAR(15),
 	CorreoElectronico NVARCHAR(50)
@@ -28,15 +28,15 @@ AS
 	ORDER BY Nombre ASC;
 
 GO
-CREATE PROCEDURE SP_BUSCAR
-	@Buscar NVARCHAR(30)
+CREATE PROCEDURE SP_FILTRAR
+	@Filtrar NVARCHAR(30)
 AS
 	SELECT *
 	FROM Contactos
-	WHERE Nombre LIKE '%'+@Buscar+'%' 
-		OR Apellido LIKE '%'+@Buscar+'%'
-		OR Movil LIKE '%'+@Buscar+'%'
-		OR Telefono LIKE '%'+@Buscar+'%'
+	WHERE Nombre LIKE '%'+@Filtrar+'%' 
+		OR Apellido LIKE '%'+@Filtrar+'%'
+		OR Movil LIKE '%'+@Filtrar+'%'
+		OR Telefono LIKE '%'+@Filtrar+'%'
 	ORDER BY Nombre ASC;
 
 GO
@@ -46,8 +46,8 @@ CREATE PROCEDURE SP_INSERTAR
 	@Apellido NVARCHAR(50),
 	@FechaNacimiento DATE,
 	@Direccion NVARCHAR(100),
-	@Genero NVARCHAR(1),
-	@EstadoCivil NVARCHAR(2),
+	@Genero NVARCHAR(15),
+	@EstadoCivil NVARCHAR(15),
 	@Movil NVARCHAR(15),
 	@Telefono NVARCHAR(15),
 	@CorreoElectronico NVARCHAR(50)
@@ -73,8 +73,8 @@ CREATE PROCEDURE SP_MODIFICAR
 	@Apellido NVARCHAR(50),
 	@FechaNacimiento DATE,
 	@Direccion NVARCHAR(100),
-	@Genero NVARCHAR(1),
-	@EstadoCivil NVARCHAR(2),
+	@Genero NVARCHAR(15),
+	@EstadoCivil NVARCHAR(15),
 	@Movil NVARCHAR(15),
 	@Telefono NVARCHAR(15),
 	@CorreoElectronico NVARCHAR(50)
@@ -88,7 +88,7 @@ AS
 		EstadoCivil = @EstadoCivil,
 		Movil = @Movil,
 		Telefono = @Telefono,
-		CorreoElectronico = @CoreoElectronico
+		CorreoElectronico = @CorreoElectronico
 	WHERE Id = @Id;
 
 GO

@@ -82,7 +82,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(290, 214);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(237, 25);
-            this.dtpFecha.TabIndex = 11;
+            this.dtpFecha.TabIndex = 6;
             // 
             // cboGenero
             // 
@@ -91,12 +91,12 @@
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Items.AddRange(new object[] {
             "Genero",
-            "M",
-            "F"});
+            "Masculino",
+            "Femenino"});
             this.cboGenero.Location = new System.Drawing.Point(290, 282);
             this.cboGenero.Name = "cboGenero";
             this.cboGenero.Size = new System.Drawing.Size(237, 25);
-            this.cboGenero.TabIndex = 12;
+            this.cboGenero.TabIndex = 7;
             this.cboGenero.Text = "Genero:";
             this.cboGenero.SelectedIndexChanged += new System.EventHandler(this.cboGenero_SelectedIndexChanged);
             // 
@@ -114,7 +114,7 @@
             this.cboEstadoCivil.Location = new System.Drawing.Point(290, 354);
             this.cboEstadoCivil.Name = "cboEstadoCivil";
             this.cboEstadoCivil.Size = new System.Drawing.Size(237, 25);
-            this.cboEstadoCivil.TabIndex = 13;
+            this.cboEstadoCivil.TabIndex = 8;
             this.cboEstadoCivil.Text = "Estado Civil:";
             // 
             // lblNombre
@@ -203,7 +203,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnGuardar.Size = new System.Drawing.Size(139, 34);
-            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "       Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -223,7 +223,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnCancelar.Size = new System.Drawing.Size(139, 34);
-            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "       Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -256,7 +256,7 @@
             this.txtEmail.Padding = new System.Windows.Forms.Padding(7);
             this.txtEmail.PasswordChar = false;
             this.txtEmail.Size = new System.Drawing.Size(208, 32);
-            this.txtEmail.TabIndex = 14;
+            this.txtEmail.TabIndex = 4;
             this.txtEmail.Tag = "Email";
             this.txtEmail.Texts = "Email";
             this.txtEmail.UnderlinedStyle = true;
@@ -279,7 +279,7 @@
             this.txtDireccion.Padding = new System.Windows.Forms.Padding(7);
             this.txtDireccion.PasswordChar = false;
             this.txtDireccion.Size = new System.Drawing.Size(237, 86);
-            this.txtDireccion.TabIndex = 10;
+            this.txtDireccion.TabIndex = 5;
             this.txtDireccion.Tag = "Direccion";
             this.txtDireccion.Texts = "Direccion";
             this.txtDireccion.UnderlinedStyle = false;
@@ -302,7 +302,7 @@
             this.txtTelefono.Padding = new System.Windows.Forms.Padding(7);
             this.txtTelefono.PasswordChar = false;
             this.txtTelefono.Size = new System.Drawing.Size(208, 32);
-            this.txtTelefono.TabIndex = 9;
+            this.txtTelefono.TabIndex = 3;
             this.txtTelefono.Tag = "Telefono";
             this.txtTelefono.Texts = "Telefono";
             this.txtTelefono.UnderlinedStyle = true;
@@ -325,7 +325,7 @@
             this.txtMovil.Padding = new System.Windows.Forms.Padding(7);
             this.txtMovil.PasswordChar = false;
             this.txtMovil.Size = new System.Drawing.Size(208, 32);
-            this.txtMovil.TabIndex = 8;
+            this.txtMovil.TabIndex = 2;
             this.txtMovil.Tag = "Movil";
             this.txtMovil.Texts = "Movil";
             this.txtMovil.UnderlinedStyle = true;
@@ -348,7 +348,7 @@
             this.txtApellido.Padding = new System.Windows.Forms.Padding(7);
             this.txtApellido.PasswordChar = false;
             this.txtApellido.Size = new System.Drawing.Size(208, 32);
-            this.txtApellido.TabIndex = 6;
+            this.txtApellido.TabIndex = 1;
             this.txtApellido.Tag = "Apellido";
             this.txtApellido.Texts = "Apellido";
             this.txtApellido.UnderlinedStyle = true;
@@ -371,7 +371,7 @@
             this.txtNombre.Padding = new System.Windows.Forms.Padding(7);
             this.txtNombre.PasswordChar = false;
             this.txtNombre.Size = new System.Drawing.Size(208, 32);
-            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.Tag = "Nombre";
             this.txtNombre.Texts = "Nombre";
             this.txtNombre.UnderlinedStyle = true;
